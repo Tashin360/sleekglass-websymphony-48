@@ -1,129 +1,88 @@
 
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Facebook, Instagram, Linkedin, Youtube, Twitter } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
   return (
-    <footer className="bg-secondary py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-secondary/40 border-t border-border backdrop-blur-sm">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="text-2xl font-bold">
-                <span className="text-white">Develop</span>
-                <span className="text-neon-blue">ito</span>
-              </div>
+            <Link to="/" className="text-2xl font-bold mb-4 flex items-center">
+              <span className="text-gradient">Developito</span>
             </Link>
-            
-            <p className="text-gray-300 mb-6">
-              We build future-ready websites that deliver results. Our expert team combines technical expertise with creative innovation.
+            <p className="text-gray-300 mt-4">
+              Modern web solutions for businesses of all sizes. We build websites that convert visitors into customers.
             </p>
             
-            <div className="flex gap-4">
-              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:neon-border transition-all">
-                <Facebook className="w-5 h-5 text-white" />
+            {/* Social Media Links */}
+            <div className="flex space-x-4 mt-6">
+              <a href="https://www.linkedin.com/company/developito" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="LinkedIn">
+                <Linkedin size={20} />
               </a>
-              <a href="#" aria-label="Twitter" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:neon-border transition-all">
-                <Twitter className="w-5 h-5 text-white" />
+              <a href="https://www.instagram.com/developito/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Instagram">
+                <Instagram size={20} />
               </a>
-              <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:neon-border transition-all">
-                <Instagram className="w-5 h-5 text-white" />
+              <a href="https://www.facebook.com/profile.php?id=61567227921734" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Facebook">
+                <Facebook size={20} />
               </a>
-              <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:neon-border transition-all">
-                <Linkedin className="w-5 h-5 text-white" />
+              <a href="https://x.com/developito" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Twitter">
+                <Twitter size={20} />
+              </a>
+              <a href="https://www.youtube.com/@Devolapito" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="YouTube">
+                <Youtube size={20} />
               </a>
             </div>
           </div>
           
+          {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-neon-blue transition-colors">Home</Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-neon-blue transition-colors">About Us</Link>
-              </li>
-              <li>
-                <Link to="/portfolio" className="text-gray-300 hover:text-neon-blue transition-colors">Portfolio</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-neon-blue transition-colors">Contact</Link>
-              </li>
-              <li>
-                <Link to="/careers" className="text-gray-300 hover:text-neon-blue transition-colors">Careers</Link>
-              </li>
-              <li>
-                <Link to="/support" className="text-gray-300 hover:text-neon-blue transition-colors">Support</Link>
-              </li>
-              <li>
-                <Link to="/privacy" className="text-gray-300 hover:text-neon-blue transition-colors">Privacy Policy</Link>
-              </li>
+            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link to="/about" className="text-gray-300 hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/portfolio" className="text-gray-300 hover:text-primary transition-colors">Our Work</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link to="/careers" className="text-gray-300 hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link to="/support" className="text-gray-300 hover:text-primary transition-colors">Support</Link></li>
             </ul>
           </div>
           
+          {/* Services */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Our Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">Website Strategy</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">Website Design</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">Webflow Development</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">WordPress Development</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">Framer Development</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">SEO Optimization</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">CMS Development</a>
-              </li>
+            <h3 className="text-lg font-bold mb-4">Our Services</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">Web Development</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">UI/UX Design</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">SEO Optimization</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">Digital Marketing</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">Content Strategy</a></li>
             </ul>
           </div>
           
+          {/* Contact Info */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="text-gray-300">
-                <span className="block">123 Web Dev Street</span>
-                <span className="block">Tech City, TC 10234</span>
-              </li>
-              <li>
-                <a href="tel:+1234567890" className="text-gray-300 hover:text-neon-blue transition-colors">+1 (234) 567-890</a>
-              </li>
-              <li>
-                <a href="mailto:info@developito.com" className="text-gray-300 hover:text-neon-blue transition-colors">info@developito.com</a>
-              </li>
-              <li className="text-gray-300">
-                <span className="block">Monday - Friday</span>
-                <span className="block">9:00 AM - 6:00 PM</span>
-              </li>
+            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>123 Web Dev Street</li>
+              <li>Tech City, TC 10234</li>
+              <li>contact@developito.com</li>
+              <li>(555) 123-4567</li>
             </ul>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/10 mt-16">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              &copy; {currentYear} Developito. All rights reserved.
-            </p>
-            
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <Link to="/privacy" className="text-gray-400 text-sm hover:text-neon-blue transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="text-gray-400 text-sm hover:text-neon-blue transition-colors">Terms of Service</Link>
-              <Link to="/sitemap" className="text-gray-400 text-sm hover:text-neon-blue transition-colors">Sitemap</Link>
-            </div>
+        {/* Copyright & Legal Links */}
+        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            © {new Date().getFullYear()} Developito. All rights reserved.
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link to="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</Link>
+            <Link to="/sitemap" className="hover:text-primary transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>
