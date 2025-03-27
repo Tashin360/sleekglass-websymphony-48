@@ -52,7 +52,7 @@ const jobListings = [
       'Design responsive interfaces for web and mobile applications',
       'Collaborate with developers to ensure proper implementation',
       'Stay up-to-date with design trends and technology developments',
-      'Contribute to the company's design system and guidelines',
+      'Contribute to the company\'s design system and guidelines',
     ]
   },
   {

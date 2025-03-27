@@ -14,9 +14,6 @@ import Support from "./pages/Support";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
-// Add dependency for react-helmet
-<lov-add-dependency>react-helmet@latest</lov-add-dependency>
-
 const queryClient = new QueryClient();
 
 const App = () => (
