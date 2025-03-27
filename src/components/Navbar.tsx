@@ -26,8 +26,6 @@ const Navbar = () => {
     { name: 'About', href: '/about' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Support', href: '/support' },
   ];
 
   return (
@@ -86,6 +84,7 @@ const Navbar = () => {
         <button 
           className="md:hidden text-white z-50"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

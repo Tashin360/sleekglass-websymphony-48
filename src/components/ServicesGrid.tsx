@@ -1,37 +1,55 @@
 
 import { motion } from 'framer-motion';
-import { Code, Search, Link, Image, Settings } from 'lucide-react';
+import { 
+  PenTool, Search, BarChart3, Layers, 
+  Code, Settings, FileText, Database, Shield 
+} from 'lucide-react';
 
 const services = [
   {
+    icon: <BarChart3 className="w-10 h-10 text-neon-blue" />,
+    title: 'Website Strategy',
+    description: 'Connecting with audiences & maximizing engagement through targeted strategy and user research.'
+  },
+  {
+    icon: <PenTool className="w-10 h-10 text-neon-green" />,
+    title: 'Website Design & Re-design',
+    description: 'Enhancing aesthetics & conversions with modern, user-centric design principles.'
+  },
+  {
+    icon: <Layers className="w-10 h-10 text-neon-yellow" />,
+    title: 'Website Information Architecture',
+    description: 'Organizing content intuitively for seamless user journeys and improved conversions.'
+  },
+  {
     icon: <Code className="w-10 h-10 text-neon-blue" />,
-    title: 'Web Development',
-    description: 'Custom web applications built with cutting-edge technologies for optimal performance and scalability.'
+    title: 'Webflow Development',
+    description: 'Dynamic, responsive sites with animations that elevate your brand experience.'
   },
   {
-    icon: <Search className="w-10 h-10 text-neon-green" />,
-    title: 'SEO Optimization',
-    description: 'Data-driven SEO strategies to rank your website at the top of search engine results.'
+    icon: <FileText className="w-10 h-10 text-neon-green" />,
+    title: 'WordPress Development',
+    description: 'UX-focused WordPress solutions that balance performance and flexibility.'
   },
   {
-    icon: <Image className="w-10 h-10 text-neon-yellow" />,
-    title: 'UI/UX Design',
-    description: 'Beautiful, intuitive interfaces designed to maximize user engagement and conversions.'
+    icon: <Settings className="w-10 h-10 text-neon-yellow" />,
+    title: 'Framer Development',
+    description: 'Interactive prototypes & websites with advanced animation capabilities.'
   },
   {
-    icon: <Link className="w-10 h-10 text-neon-blue" />,
-    title: 'Digital Marketing',
-    description: 'Comprehensive digital marketing solutions to boost your online presence and ROI.'
+    icon: <Search className="w-10 h-10 text-neon-blue" />,
+    title: 'Website SEO Optimization',
+    description: 'Boosting visibility & organic traffic with data-driven SEO strategies.'
   },
   {
-    icon: <Settings className="w-10 h-10 text-neon-green" />,
-    title: 'Web Maintenance',
-    description: 'Ongoing support and maintenance to keep your website running smoothly and securely.'
+    icon: <Database className="w-10 h-10 text-neon-green" />,
+    title: 'CMS Development',
+    description: 'Custom CMS for easy content management that empowers your team.'
   },
   {
-    icon: <Code className="w-10 h-10 text-neon-yellow" />,
-    title: 'E-commerce Solutions',
-    description: 'Custom e-commerce platforms with seamless checkout processes and robust security.'
+    icon: <Shield className="w-10 h-10 text-neon-yellow" />,
+    title: 'Website Maintenance & Support',
+    description: 'Ensuring security & smooth performance with ongoing expert support.'
   }
 ];
 

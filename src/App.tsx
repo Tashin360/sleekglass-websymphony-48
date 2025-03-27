@@ -9,8 +9,6 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
-import Careers from "./pages/Careers";
-import Support from "./pages/Support";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
@@ -44,8 +42,6 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/support" element={<Support />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
