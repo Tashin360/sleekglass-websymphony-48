@@ -13,7 +13,7 @@ const jobOpenings = [
     location: 'Remote / Tech City',
     type: 'Full-time',
     salary: '$80K - $120K',
-    description: 'We're looking for an experienced web developer with 5+ years of experience in React, Node.js, and modern web technologies.',
+    description: 'We\'re looking for an experienced web developer with 5+ years of experience in React, Node.js, and modern web technologies.',
     responsibilities: [
       'Develop responsive, high-performance websites and web applications',
       'Write clean, maintainable code following best practices',
@@ -37,7 +37,7 @@ const jobOpenings = [
     location: 'Tech City (Hybrid)',
     type: 'Full-time',
     salary: '$70K - $100K',
-    description: 'We're seeking a creative UI/UX Designer who can transform complex problems into intuitive, accessible, and easy-to-use designs.',
+    description: 'We\'re seeking a creative UI/UX Designer who can transform complex problems into intuitive, accessible, and easy-to-use designs.',
     responsibilities: [
       'Create user-centered designs by understanding business requirements and user feedback',
       'Design UI elements and components that are reusable and help maintain design consistency',
@@ -128,7 +128,7 @@ const Careers = () => {
                   Join Our <span className="text-gradient">Team</span>
                 </h1>
                 <p className="text-xl text-gray-300">
-                  We're looking for exceptional talent to help us build the web of tomorrow. Browse our open positions and find your next big opportunity.
+                  We&apos;re looking for exceptional talent to help us build the web of tomorrow. Browse our open positions and find your next big opportunity.
                 </p>
               </motion.div>
             </div>
@@ -166,7 +166,7 @@ const Careers = () => {
                     </div>
                     <h3 className="text-xl font-bold mb-2">Continuous Learning</h3>
                     <p className="text-gray-300">
-                      We invest in our team's growth through ongoing education, conferences, and skill development.
+                      We invest in our team&apos;s growth through ongoing education, conferences, and skill development.
                     </p>
                   </motion.div>
                   
@@ -454,10 +454,10 @@ const Careers = () => {
                 className="glass-dark p-10 md:p-16 rounded-lg text-center max-w-4xl mx-auto"
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Don't See the <span className="text-gradient">Perfect Fit?</span>
+                  Don&apos;t See the <span className="text-gradient">Perfect Fit?</span>
                 </h2>
                 <p className="text-xl text-gray-300 mb-8">
-                  We're always looking for talented individuals to join our team. Send your resume to us, and we'll reach out when a suitable position opens up.
+                  We&apos;re always looking for talented individuals to join our team. Send your resume to us, and we&apos;ll reach out when a suitable position opens up.
                 </p>
                 <a
                   href="mailto:careers@developito.com"
