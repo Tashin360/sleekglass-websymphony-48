@@ -4,6 +4,8 @@ import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-secondary py-16">
       <div className="container mx-auto px-4">
@@ -52,6 +54,12 @@ const Footer = () => {
                 <Link to="/contact" className="text-gray-300 hover:text-neon-blue transition-colors">Contact</Link>
               </li>
               <li>
+                <Link to="/careers" className="text-gray-300 hover:text-neon-blue transition-colors">Careers</Link>
+              </li>
+              <li>
+                <Link to="/support" className="text-gray-300 hover:text-neon-blue transition-colors">Support</Link>
+              </li>
+              <li>
                 <Link to="/privacy" className="text-gray-300 hover:text-neon-blue transition-colors">Privacy Policy</Link>
               </li>
             </ul>
@@ -73,7 +81,13 @@ const Footer = () => {
                 <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">WordPress Development</a>
               </li>
               <li>
+                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">Framer Development</a>
+              </li>
+              <li>
                 <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">SEO Optimization</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-neon-blue transition-colors">CMS Development</a>
               </li>
             </ul>
           </div>
@@ -99,80 +113,10 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Careers and Support Sections */}
-        <div className="mt-16 pt-8 border-t border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* Careers Section */}
-            <div className="glass p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-neon-blue mb-4">Careers</h3>
-              <p className="text-gray-300 mb-4">
-                Join our team of talented developers, designers, and digital marketers. We're always looking for exceptional people.
-              </p>
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="senior-developer" className="border-white/10">
-                  <AccordionTrigger className="text-white hover:text-neon-blue">Senior Web Developer</AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    <p className="mb-2">We're looking for an experienced web developer with 5+ years of experience in React, Node.js, and modern web technologies.</p>
-                    <a href="mailto:careers@developito.com" className="text-neon-blue hover:underline">Apply Now</a>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="ux-designer" className="border-white/10">
-                  <AccordionTrigger className="text-white hover:text-neon-blue">UX/UI Designer</AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    <p className="mb-2">Creative designer with a strong portfolio and experience in creating beautiful, functional interfaces for web applications.</p>
-                    <a href="mailto:careers@developito.com" className="text-neon-blue hover:underline">Apply Now</a>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="digital-marketer" className="border-white/10">
-                  <AccordionTrigger className="text-white hover:text-neon-blue">Digital Marketing Specialist</AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    <p className="mb-2">Expert in SEO, content marketing, and PPC campaigns with a track record of driving measurable results.</p>
-                    <a href="mailto:careers@developito.com" className="text-neon-blue hover:underline">Apply Now</a>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-            
-            {/* Support Section */}
-            <div className="glass p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-neon-blue mb-4">Support</h3>
-              <p className="text-gray-300 mb-4">
-                Need help with your website? Our support team is here to assist you with any questions or issues.
-              </p>
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="faq" className="border-white/10">
-                  <AccordionTrigger className="text-white hover:text-neon-blue">Frequently Asked Questions</AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    <ul className="space-y-2">
-                      <li><strong>How long does a website project take?</strong> Typically 4-8 weeks depending on complexity.</li>
-                      <li><strong>Do you offer hosting?</strong> Yes, we provide reliable, high-performance hosting services.</li>
-                      <li><strong>What about SEO?</strong> All our websites are built with SEO best practices.</li>
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="contact-support" className="border-white/10">
-                  <AccordionTrigger className="text-white hover:text-neon-blue">Contact Support</AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    <p className="mb-2">Our support team is available Monday-Friday, 9am-6pm.</p>
-                    <a href="mailto:support@developito.com" className="text-neon-blue hover:underline">Email Support</a>
-                    <p className="mt-2">Or call us at: <a href="tel:+1234567890" className="text-neon-blue hover:underline">+1 (234) 567-890</a></p>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="maintenance" className="border-white/10">
-                  <AccordionTrigger className="text-white hover:text-neon-blue">Maintenance Plans</AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
-                    <p>We offer various maintenance plans to keep your website secure, updated, and performing optimally. Contact us for details.</p>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          </div>
-        </div>
-        
-        <div className="pt-8 border-t border-white/10">
+        <div className="pt-8 border-t border-white/10 mt-16">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Developito. All rights reserved.
+              &copy; {currentYear} Developito. All rights reserved.
             </p>
             
             <div className="flex gap-6 mt-4 md:mt-0">

@@ -9,7 +9,11 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
+import Support from "./pages/Support";
 import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 
 // Create a client
@@ -42,7 +46,11 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
