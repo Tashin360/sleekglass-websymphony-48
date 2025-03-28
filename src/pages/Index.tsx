@@ -8,6 +8,7 @@ import Features from '@/components/Features';
 import Portfolio from '@/components/Portfolio';
 import Testimonials from '@/components/Testimonials';
 import Workflow from '@/components/Workflow';
+import Benefits from '@/components/Benefits';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 
@@ -74,6 +75,7 @@ const Home = () => {
           <Workflow />
           <ProjectsCounter />
           <Features />
+          <Benefits />
           <Portfolio />
           <Testimonials />
           <CallToAction />
