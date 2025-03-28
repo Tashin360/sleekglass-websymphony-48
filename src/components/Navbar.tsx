@@ -1,12 +1,14 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +19,20 @@ const Navbar = () => {
       }
     };
 
+    // Check authentication status
+    const checkAuth = () => {
+      const authStatus = localStorage.getItem('isAuthenticated') === 'true';
+      setIsAuthenticated(authStatus);
+    };
+
+    checkAuth();
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('storage', checkAuth);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('storage', checkAuth);
+    };
   }, []);
 
   const navItems = [
@@ -59,25 +73,64 @@ const Navbar = () => {
             >
               <Link 
                 to={item.href}
-                className="text-sm font-medium text-gray-200 hover:text-neon-blue transition-colors relative group"
+                className={`text-sm font-medium text-gray-200 hover:text-neon-blue transition-colors relative group ${
+                  location.pathname === item.href ? 'text-neon-blue' : ''
+                }`}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-blue group-hover:w-full transition-all duration-300"></span>
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-neon-blue transition-all duration-300 ${
+                  location.pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
             </motion.div>
           ))}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6 }}
-          >
-            <Link 
-              to="/contact"
-              className="ml-4 px-5 py-2 rounded-md bg-neon-blue text-white font-medium hover:bg-opacity-80 transition-colors"
+          
+          {isAuthenticated ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
             >
-              Get Started
-            </Link>
-          </motion.div>
+              <Link 
+                to="/dashboard"
+                className={`ml-4 px-5 py-2 rounded-md flex items-center gap-2 
+                  ${location.pathname === '/dashboard' 
+                    ? 'bg-neon-blue text-white' 
+                    : 'bg-gray-800 text-gray-200 hover:bg-gray-700'
+                  } transition-colors`}
+              >
+                <User size={16} />
+                Dashboard
+              </Link>
+            </motion.div>
+          ) : (
+            <>
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Link 
+                  to="/sign-in"
+                  className="text-sm font-medium text-gray-200 hover:text-neon-blue transition-colors"
+                >
+                  Sign In
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Link 
+                  to="/sign-up"
+                  className="ml-4 px-5 py-2 rounded-md bg-neon-blue text-white font-medium hover:bg-opacity-80 transition-colors"
+                >
+                  Get Started
+                </Link>
+              </motion.div>
+            </>
+          )}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -106,26 +159,61 @@ const Navbar = () => {
               >
                 <Link 
                   to={item.href}
-                  className="text-xl font-medium text-white hover:text-neon-blue transition-colors"
+                  className={`text-xl font-medium hover:text-neon-blue transition-colors ${
+                    location.pathname === item.href ? 'text-neon-blue' : 'text-white'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               </motion.div>
             ))}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 }}
-            >
-              <Link 
-                to="/contact"
-                className="mt-4 px-6 py-3 rounded-md bg-neon-blue text-white font-medium hover:bg-opacity-80 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+            
+            {isAuthenticated ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 }}
               >
-                Get Started
-              </Link>
-            </motion.div>
+                <Link 
+                  to="/dashboard"
+                  className="mt-4 px-6 py-3 rounded-md bg-neon-blue text-white font-medium hover:bg-opacity-80 transition-colors flex items-center gap-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <User size={18} />
+                  Dashboard
+                </Link>
+              </motion.div>
+            ) : (
+              <>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Link 
+                    to="/sign-in"
+                    className="text-xl font-medium text-white hover:text-neon-blue transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Sign In
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  <Link 
+                    to="/sign-up"
+                    className="mt-4 px-6 py-3 rounded-md bg-neon-blue text-white font-medium hover:bg-opacity-80 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Get Started
+                  </Link>
+                </motion.div>
+              </>
+            )}
           </motion.div>
         )}
       </div>
