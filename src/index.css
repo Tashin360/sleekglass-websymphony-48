@@ -123,4 +123,56 @@
   .hover-glow:hover {
     @apply shadow-[0_0_15px_rgba(14,165,233,0.7)];
   }
+  
+  /* Gradient stops for our SVG hexagons */
+  .stop-from-neon-blue {
+    stop-color: #0ea5e9;
+  }
+  
+  .stop-to-blue-500 {
+    stop-color: #3b82f6;
+  }
+  
+  .stop-from-neon-green {
+    stop-color: #10b981;
+  }
+  
+  .stop-to-green-500 {
+    stop-color: #22c55e;
+  }
+  
+  .stop-from-purple-500 {
+    stop-color: #a855f7;
+  }
+  
+  .stop-to-pink-500 {
+    stop-color: #ec4899;
+  }
+  
+  .stop-from-amber-500 {
+    stop-color: #f59e0b;
+  }
+  
+  .stop-to-orange-500 {
+    stop-color: #f97316;
+  }
+  
+  /* Hexagon animation */
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .animate-slow-spin {
+    animation: rotate 30s linear infinite;
+  }
+  
+  /* Radial gradient backgrounds */
+  .radial-gradient-blue {
+    background: radial-gradient(circle at center, rgba(14, 165, 233, 0.15) 0%, rgba(14, 165, 233, 0) 70%);
+  }
+  
+  .radial-gradient-green {
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0) 70%);
+  }
 }
