@@ -7,6 +7,7 @@ import ProjectsCounter from '@/components/ProjectsCounter';
 import Features from '@/components/Features';
 import Portfolio from '@/components/Portfolio';
 import Testimonials from '@/components/Testimonials';
+import Workflow from '@/components/Workflow';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 
@@ -70,6 +71,7 @@ const Home = () => {
         <main>
           <Hero />
           <ServicesGrid />
+          <Workflow />
           <ProjectsCounter />
           <Features />
           <Portfolio />
